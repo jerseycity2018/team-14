@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
 {% block main %}
-
+<table>
+{% for items in waste %}
+    <tr>
+    <td>{{items.volunteer}}</td>
+    <td>{{items.wasteWeight}}</td>
+    </tr>
+{% endfor %}
 {% endblock %}

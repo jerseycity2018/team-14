@@ -18,6 +18,7 @@ from django.contrib.auth import (
 )
 
 from .forms import UserLoginForm, UserRegisterForm, UserSurveyForm, WasteTrackingForm, VolunteerTrackingForm
+from .models import WasteTracking, VolunteerTracking
 
 # Create your views here.
 def HomeView(request):
@@ -120,5 +121,15 @@ def VolunteerTrackingFormView(request):
 
     context = {'form': form,}
     return render(request, "form-template.html", context)
+
+def profileView(request):
+    waste = WasteTracking.objects.filter(volunteer = request.user.username)
+    volunteer = VolunteerTracking.objects.filter(volunteer = request.user.username)
+    next = request.GET.get('next')
+    context = {'waste': waste, 'volunteer':volunteer}
+    if next:
+            return redirect(next)
+    return render(request, 'profile.html', context)
+
 
 
