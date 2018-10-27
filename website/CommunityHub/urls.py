@@ -1,10 +1,16 @@
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.contrib.auth import views as auth_views
-from . import views
+from .views import login_view, register_view, logout_view, HomeView, UserSurveyFormView, WasteTrackingFormView, VolunteerTrackingFormView
 
 app_name = 'CommunityHub'
 
 urlpatterns = [
-    path('', views.HomeView, {}),
+    path('', HomeView, name = 'home'),
+    path('signup/', register_view, name='signup'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('login/', login_view, name = 'login'),
+    path('survey/', UserSurveyFormView, name='survey'),
+    path('wasteTrack/', WasteTrackingFormView, name='wasteTrack'),
+    path('volunteerTrack/', VolunteerTrackingFormView, name='volunteerTrack'),
 ]
