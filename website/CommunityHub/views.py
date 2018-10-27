@@ -152,6 +152,11 @@ def AdminDashView(request):
     if next:
             return redirect(next)
     return render(request, 'adminDashboardHome.html', context)
+
+#def OneJobView(request):
+#	user = request.user
+#	next = request.GET.get('next')
+#	return redirect('/job_ex.html')
    
 def myKey(e):
     return e.date
