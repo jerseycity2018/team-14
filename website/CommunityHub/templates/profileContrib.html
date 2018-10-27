@@ -1,0 +1,32 @@
+{% extends 'profile.html' %}
+
+{% block profilemain %}
+<h2>Section title</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Community Member</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for items in waste %}
+                    <tr>
+                    <td>Waste Drop Off</td>
+                    <td> {{items.volunteer}}</td>
+                    <td> {{items.wasteWeight}}</td>
+                    </tr>
+                {% endfor %}
+                {% for items in waste %}
+                    <tr>
+                    <td>Volunteer Time</td>
+                    <td> {{items.volunteer}}</td>
+                    <td> {{items.VolunteerTime}}</td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+{% endblock %}
