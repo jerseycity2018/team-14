@@ -122,6 +122,12 @@ def VolunteerTrackingFormView(request):
     context = {'form': form,}
     return render(request, "adminDashForms.html", context)
 
+def profileHomeView(request):
+    next = request.GET.get('next')
+    if next:
+            return redirect(next)
+    return render(request, 'profileHome.html')
+
 def profileView(request):
     user = request.user
     waste = WasteTracking.objects.filter(volunteer = user.username)
@@ -129,16 +135,12 @@ def profileView(request):
     next = request.GET.get('next')
     totalHours = 0
     totalWaste = 0
-    for items in volunteer:
-        totalHours += int(items.VolunteerTime)
-    for items in waste:
-        totalWaste += int(waste.wasteWeight)
     
-    context = {'waste': waste, 'volunteer': volunteer, 'totalHours': totalHours, 'totalWaste': totalWaste,
+    context = {'waste': waste, 'volunteer': volunteer, 
     'user': user}
     if next:
             return redirect(next)
-    return render(request, 'profile.html', context)
+    return render(request, 'profileContrib.html', context)
 
 def AdminDashView(request):
     user = request.user

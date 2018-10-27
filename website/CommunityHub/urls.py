@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.contrib.auth import views as auth_views
 from .views import login_view, register_view, logout_view, HomeView, UserSurveyFormView, WasteTrackingFormView, VolunteerTrackingFormView
-from .views import profileView, AdminDashView
+from .views import profileView, AdminDashView, profileHomeView
 app_name = 'CommunityHub'
 
 urlpatterns = [
@@ -13,6 +13,7 @@ urlpatterns = [
     path('survey/', UserSurveyFormView, name='survey'),
     path('wasteTrack/', WasteTrackingFormView, name='wasteTrack'),
     path('volunteerTrack/', VolunteerTrackingFormView, name='volunteerTrack'),
-    path('profile/', profileView, name = 'profile'),
-    path('dash/',AdminDashView, name = 'adminDash')
+    path('profile/', profileHomeView, name = 'profile'),
+    path('profile/contrib', profileView, name='contrib'),
+    path('dash/',AdminDashView, name = 'adminDash'),
 ]
