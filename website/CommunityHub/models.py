@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
 from django.contrib.auth.models import User
 
 class UserSurvey(models.Model):
@@ -14,6 +15,7 @@ class UserSurvey(models.Model):
 class WasteTracking(models.Model):
     #Workers username
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    date = models.DateField(default=timezone.now)
     volunteer = models.CharField(max_length = 100)
     wasteWeight = models.IntegerField()
 
@@ -23,6 +25,7 @@ class WasteTracking(models.Model):
 class VolunteerTracking(models.Model):
     #Workers username
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    date = models.DateField(default=timezone.now)
     volunteer = models.CharField(max_length = 100)
     VolunteerTime = models.IntegerField()
 
