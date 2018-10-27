@@ -26,9 +26,17 @@
             <a class="nav-link" href="{% url 'CommunityHub:home' %}">Home <span class="sr-only">(current)</span></a>
           </li>
           {% if user.is_authenticated %}
-          <li class = "nav-item active">
-            <a class = "nav-link" href="#">Profile<span class="sr-only">(current)</span></a>
-          </li>
+
+            {% if request.user.is_staff %}
+              <li class = "nav-item active">
+              <a class = "nav-link" href="#">Admin Dashboard<span class="sr-only">(current)</span></a>
+              </li>
+            {% else %}
+              <li class = "nav-item active">
+                <a class = "nav-link" href="#">Profile<span class="sr-only">(current)</span></a>
+              </li>
+            {% endif %}
+
           <li class = "nav-item active">
             <a class = "nav-link" href="{% url 'CommunityHub:logout' %}">Logout<span class="sr-only">(current)</span></a>
           </li>

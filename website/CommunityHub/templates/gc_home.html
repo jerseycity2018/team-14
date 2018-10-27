@@ -15,21 +15,31 @@
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
+    .row.content {height: 1000px}
     
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
-      background-color: #f1f1f1;
+      background-color: #c5d5c5;
       height: 100%;
     }
+
+    .cropimg {
+      position: absolute;
+      clip: rect(0px,50px,100px,50px);
+    }
     
+
     /* Set black background color, white text and some padding */
     footer {
       background-color: #555;
       color: white;
       padding: 15px;
     }
+    .bodys{
+      background-color: #f2f2f2; 
+    }
+
     
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
@@ -42,42 +52,131 @@
   </style>
 </head>
 <body>
+
+  <head><!-- Start CSS Slideshow HEAD section -->
+<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
+<!-- End CSS Slider HEAD section --></head>
+
+
   
 <div class="container-fluid text-center">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
+    <div class="col-sm-2 sidenav" >
+      <div class="well", style= "overflow:scroll; height:200px">
+        <p><b>Our Farms</b></p>
+        <p><a href="#">Red Hook Houses</a></p>
+        <p><a href="#">Howard Houses</a></p>
+        <p><a href="#">Bushwick City</a></p>
+        <p><a href="#">Wagner Houses</a></p>
+        <p><a href="#">Bay View Houses</a></p>
+      </div>
       <div class="well", style= "overflow:scroll; height:300px">
         <p><b>Job Opportunities</b></p>
+        <p><a href="job_ex.html">Office Manager</a></p>
+        <p><a href="job_ex.html">Director of Finance</a></p>
+        <p><a href="job_ex.html">People Operations Manager</a></p>
+        <p><a href="job_ex.html">Human Resources Manager</a></p>
+        <p><a href="job_ex.html">Director of Finance</a></p>
+        <p><a href="#">People Operations Manager (Human Resources)</a></p>
         <p><a href="job_ex.html">Office Manager</a></p>
         <p><a href="#">Director of Finance</a></p>
         <p><a href="#">People Operations Manager (Human Resources)</a></p>
       </div>
     </div>
-    <div class="col-sm-8 text-left"> 
-      <h1>Welcome</h1>
-      <p>Welcome to online community for Green City Force.</p>
+    <div class="col-sm-8 text-left bodys"> 
+      <center><h1>Welcome to Community HUB</h1>
+      <p><i>Green City Force has created Commnity HUB to serve as an online platform to connect the people living in NYCHA Housing.</i></p></center>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container" style = "width: 100%; "> 
+  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://static1.squarespace.com/static/559d5c80e4b0ffc53d0e87d5/t/57a2256a6b8f5b9351bc85f1/1470244231617/?format=1500w" alt="Los Angeles" style="width:100%;">
+        <div class="carousel-caption">
+        <h2 style = "color: white; text-shadow: black 0.1em 0.1em 0.3em;"> Farms</h2>
+        <h4 style = "color: white; text-shadow: black 0.1em 0.1em 0.3em;">Check out what vegetables are growing at our gardens.</h4>
+      </div>
+      </div>
+
+      <div class="item">
+        <img src="https://static1.squarespace.com/static/572d0fcc2b8dde9e10ab59d4/t/58a4c5f6ebbd1ae98b1493ed/1487200095850/?format=1500w" alt="Chicago" style="width:100%;">
+        <div class="carousel-caption">
+        <h2 style = "color: white; text-shadow: black 0.1em 0.1em 0.3em;">Volunteer</h2>
+        <h4 style = "color: white; text-shadow: black 0.1em 0.1em 0.3em;">Keep track of your volunteering hours and track your points.</h4>
+      </div>
+      </div>
+    
+      <div class="item">
+        <img src="./pictures/nycha_volunteer.jpg" alt="New york" style="width:100%;">
+        <div class="carousel-caption " >
+
+        <h2 style = "color: white; text-shadow: black 0.1em 0.1em 0.3em;">Careers</h2>
+        <h4 style = "color: white; text-shadow: black 0.1em 0.1em 0.3em;">Get involved! Be a part of Green City Force!</h4>
+      </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
       <hr>
       <h3>Events</h3>
       <center>
-      <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=f9d9mo8don4r6vckqkmn6a9h4k%40group.calendar.google.com&amp;color=%235229A3&amp;ctz=America%2FNew_York" style="border-width:0" width="700" height="300" frameborder="0" scrolling="no"></iframe>
+      <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=f9d9mo8don4r6vckqkmn6a9h4k%40group.calendar.google.com&amp;color=%235229A3&amp;ctz=America%2FNew_York" style="border-width:0" width="600" height="300" frameborder="0" scrolling="no"></iframe>
       </center>
+
     </div>
-    <div class="col-sm-2 sidenav">
+    <div class="col-sm-2 sidenav" style= "height:100%">
       <div class="well", style= "overflow:scroll; height:300px">
         <p><b>Announcements</b></p>
-        <p>Nov. 7 - Farm </p>
-        <p>Nov. 7 - Farm </p>
-        <p>Nov. 7 - Farm </p>
-        <p>Nov. 7 - Farm </p>
-        <p>Nov. 7 - Farm </p>
-        <p>Nov. 7 - Farm </p>
-        <p>Nov. 7 - Farm </p>
-        <p>Nov. 7 - Farm </p>
-        <p>Nov. 7 - Farm </p>
-        <p>Nov. 7 - Farm </p>
+        <p>Volunteer Tomorrow</p>
+        <p> Grab your spinach </p>
+        <p>All out of Broccili at Gardens 1</p>
+        <p>Volunteer Tomorrow</p>
+        <p> Grab your spinach </p>
+        <p>All out of Broccili at Gardens 1</p>
+        <p>Volunteer Tomorrow</p>
+        <p> Grab your spinach </p>
+        <p>All out of Broccili at Gardens 1</p>
       </div>
-      <div class="well">
-        <p>ADS</p>
+      <div class="well", style= "overflow:scroll; height:300px">
+        <p><b>Events</b></p>
+        <p>Nov. 7 -  Farm Volunteering </p>
+        <p>Nov. 8 - Giveback to the community </p>
+        <p>Nov. 9 - Learn about our volunteering efforts </p>
+        <p>Nov. 10 -  Farm Volunteering </p>
+        <p>Nov. 11 - Giveback to the community </p>
+        <p>Nov. 12 - Learn about our volunteering efforts </p>
+        <p>Nov. 13 -  Farm Volunteering </p>
+        <p>Nov. 14 - Giveback to the community </p>
+        <p>Nov. 15 - Learn about our volunteering efforts </p>
       </div>
     </div>
   </div>
