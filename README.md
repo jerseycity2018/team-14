@@ -8,3 +8,4 @@
 	##run "pip install -r requirements.txt"
 	##in your virtualenv, run "python manage.py runserver" to run your server
 	##Default website "http://localhost:8000"
+	.
