@@ -134,7 +134,7 @@ def profileView(request):
     for items in waste:
         totalWaste += int(waste.wasteWeight)
     
-    context = {'waste': waste, 'volunteer':volunteer, 'totalHours': totalHours, 'totalWaste': totalWaste,
+    context = {'waste': waste, 'volunteer': volunteer, 'totalHours': totalHours, 'totalWaste': totalWaste,
     'user': user}
     if next:
             return redirect(next)
