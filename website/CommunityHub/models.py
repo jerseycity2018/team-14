@@ -9,7 +9,7 @@ class UserSurvey(models.Model):
     referredBy = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.user
+        return self.user.name
 
 class WasteTracking(models.Model):
     #Workers username
@@ -18,7 +18,7 @@ class WasteTracking(models.Model):
     wasteWeight = models.IntegerField()
 
     def __str__(self):
-        return self.user
+        return self.volunteer
 
 class VolunteerTracking(models.Model):
     #Workers username
@@ -27,4 +27,4 @@ class VolunteerTracking(models.Model):
     VolunteerTime = models.IntegerField()
 
     def __str__(self):
-        return self.user
+        return self.volunteer
