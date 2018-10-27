@@ -123,10 +123,19 @@ def VolunteerTrackingFormView(request):
     return render(request, "form-template.html", context)
 
 def profileView(request):
-    waste = WasteTracking.objects.filter(volunteer = request.user.username)
-    volunteer = VolunteerTracking.objects.filter(volunteer = request.user.username)
+    user = request.user
+    waste = WasteTracking.objects.filter(volunteer = user.username)
+    volunteer = VolunteerTracking.objects.filter(volunteer = user.username)
     next = request.GET.get('next')
-    context = {'waste': waste, 'volunteer':volunteer}
+    totalHours = 0
+    totalWaste = 0
+    for items in volunteer:
+        totalHours += int(items.VolunteerTime)
+    for items in waste:
+        totalWaste += int(waste.wasteWeight)
+    
+    context = {'waste': waste, 'volunteer':volunteer, 'totalHours': totalHours, 'totalWaste': totalWaste,
+    'user': user}
     if next:
             return redirect(next)
     return render(request, 'profile.html', context)
