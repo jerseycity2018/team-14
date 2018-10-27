@@ -5,6 +5,6 @@
 	##run "pip install virtualenv"
 	##run "python -m virtualenv env"
 	##run "env \Scripts\activate" -> puts you in the virtualenv
-	##run "pip install django"
+	##run "pip install -r requirements.txt"
 	##in your virtualenv, run "python manage.py runserver" to run your server
 	##Default website "http://localhost:8000"
