@@ -3,8 +3,8 @@ from django import forms
 from django.contrib.auth import (
     authenticate,
     get_user_model
-
 )
+from .models import UserSurvey
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
@@ -60,3 +60,13 @@ class UserRegisterForm(forms.ModelForm):
             raise forms.ValidationError(
                 "This email has already been registered")
         return super(UserRegisterForm, self).clean(*args, **kwargs)
+
+class UserSurveyForm(forms.ModelForm):
+
+    class Meta:
+        model = UserSurvey
+        fields = [
+            'isNYCHA',
+            'building',
+            'referredBy',
+        ]
