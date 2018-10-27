@@ -106,7 +106,7 @@ def WasteTrackingFormView(request):
         return redirect('/')
 
     context = {'form': form,}
-    return render(request, "form-template.html", context)
+    return render(request, "adminDashForms.html", context)
 
 def VolunteerTrackingFormView(request):
     next = request.GET.get('next')
@@ -120,7 +120,7 @@ def VolunteerTrackingFormView(request):
         return redirect('/')
 
     context = {'form': form,}
-    return render(request, "form-template.html", context)
+    return render(request, "adminDashForms.html", context)
 
 def profileView(request):
     user = request.user
@@ -139,6 +139,20 @@ def profileView(request):
     if next:
             return redirect(next)
     return render(request, 'profile.html', context)
+
+def AdminDashView(request):
+    user = request.user
+    waste = WasteTracking.objects.all()
+    volunteer = VolunteerTracking.objects.all()
+    next = request.GET.get('next')
+    context = {'waste': waste, 'volunteer': volunteer,
+    'user': user}
+    if next:
+            return redirect(next)
+    return render(request, 'adminDashboardHome.html', context)
+   
+def myKey(e):
+    return e.date
 
 
 

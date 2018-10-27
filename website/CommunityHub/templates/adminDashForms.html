@@ -1,0 +1,8 @@
+{% extends 'adminDashboard.html'%}
+{% block dashmain%}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" />
+    </form>
+{% endblock %}
