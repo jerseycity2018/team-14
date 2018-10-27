@@ -1,0 +1,20 @@
+{% extends 'adminDashboard.html'%}
+{% block dashmain%}
+<style>
+#checkboxes{
+    size: 16pt;
+    margins: 10px;
+}
+
+</style>
+<div id="checkboxes">
+  <h2>To Do:</h2>
+  <ul class="list-group">
+    <li class="list-group-item"><input type="checkbox"> Rake all Rows</li>
+    <li class="list-group-item"><input type="checkbox"> Water beds A, C, D</li>
+    <li class="list-group-item"><input type="checkbox"> Prep Bed B for new seeds</li>
+    <li class="list-group-item"><input type="checkbox"> Begin Harvest of Row D</li>
+  </ul>
+</div>
+
+{% endblock %}
