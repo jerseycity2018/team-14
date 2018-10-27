@@ -17,7 +17,7 @@ from django.contrib.auth import (
     logout
 )
 
-from .forms import UserLoginForm, UserRegisterForm, UserSurveyForm
+from .forms import UserLoginForm, UserRegisterForm, UserSurveyForm, WasteTrackingForm, VolunteerTrackingForm
 
 # Create your views here.
 def HomeView(request):
@@ -82,6 +82,34 @@ def logout_view(request):
 def UserSurveyFormView(request):
     next = request.GET.get('next')
     form = UserSurveyForm(request.POST or None)
+    if form.is_valid():
+        survey = form.save(commit=False)
+        survey.user = request.user
+        survey.save()
+        if next:
+            return redirect(next)
+        return redirect('/')
+
+    context = {'form': form,}
+    return render(request, "form-template.html", context)
+
+def WasteTrackingFormView(request):
+    next = request.GET.get('next')
+    form = WasteTrackingForm(request.POST or None)
+    if form.is_valid():
+        survey = form.save(commit=False)
+        survey.user = request.user
+        survey.save()
+        if next:
+            return redirect(next)
+        return redirect('/')
+
+    context = {'form': form,}
+    return render(request, "form-template.html", context)
+
+def VolunteerTrackingFormView(request):
+    next = request.GET.get('next')
+    form = VolunteerTrackingForm(request.POST or None)
     if form.is_valid():
         survey = form.save(commit=False)
         survey.user = request.user

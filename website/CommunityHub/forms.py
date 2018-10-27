@@ -4,7 +4,7 @@ from django.contrib.auth import (
     authenticate,
     get_user_model
 )
-from .models import UserSurvey
+from .models import UserSurvey, WasteTracking, VolunteerTracking
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
@@ -69,4 +69,22 @@ class UserSurveyForm(forms.ModelForm):
             'isNYCHA',
             'building',
             'referredBy',
+        ]
+
+class WasteTrackingForm(forms.ModelForm):
+
+    class Meta:
+        model = WasteTracking
+        fields = [
+         'volunteer',
+         'wasteWeight',
+        ]
+
+class VolunteerTrackingForm(forms.ModelForm):
+
+    class Meta:
+        model = VolunteerTracking
+        fields = [
+         'volunteer',
+         'VolunteerTime',  
         ]
