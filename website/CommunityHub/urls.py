@@ -10,5 +10,5 @@ urlpatterns = [
     path('signup/', register_view, name='signup'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('login/', login_view, name = 'login'),
-    path('survey/', UserSurveyFormView, name='Survey'),
+    path('survey/', UserSurveyFormView, name='survey'),
 ]

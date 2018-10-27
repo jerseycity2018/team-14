@@ -67,7 +67,7 @@ def register_view(request):
         login(request, new_user)
         if next:
             return redirect(next)
-        return redirect('/')
+        return redirect('CommunityHub:survey')
 
     context = {
         'form': form,
