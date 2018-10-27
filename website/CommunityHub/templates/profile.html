@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,12 +57,19 @@
             <th>Date</th>
             <th>Hours</th>
           </tr>
-          {%for item in query%}
+
+          {% extends 'base.html' %}
+
+          {% block main %}
+         {% for items in waste %}
+
           <tr>
-              <td>{%item.Date%}</td>
-              <td>{%item.Hours%}</td>
+              <td>{{items.volunteer}}</td>
+              <td>{{items.wasteWeight}}</td>
           </tr>   
         </table>
+        {% endfor %}
+        {% endblock %}
       </div>
          
     </div>
@@ -81,4 +89,6 @@
 
 </body>
 </html>
+
+
 
