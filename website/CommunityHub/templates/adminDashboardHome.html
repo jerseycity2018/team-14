@@ -2,7 +2,7 @@
 {% block dashmain%}
 <h1>Dashboard</h1>
 
-          <h2>Section title</h2>
+          <h2>Todays Accomplishments</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -20,7 +20,7 @@
                     <td> {{items.wasteWeight}}</td>
                     </tr>
                 {% endfor %}
-                {% for items in waste %}
+                {% for items in volunteer %}
                     <tr>
                     <td>Volunteer Time</td>
                     <td> {{items.volunteer}}</td>

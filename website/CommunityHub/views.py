@@ -105,7 +105,7 @@ def WasteTrackingFormView(request):
             return redirect(next)
         return redirect('/')
 
-    context = {'form': form,}
+    context = {'form': form, 'title': "Compost Drop Off"}
     return render(request, "adminDashForms.html", context)
 
 def VolunteerTrackingFormView(request):
@@ -119,7 +119,7 @@ def VolunteerTrackingFormView(request):
             return redirect(next)
         return redirect('/')
 
-    context = {'form': form,}
+    context = {'form': form, 'title': "Log Volunteer Contribution"}
     return render(request, "adminDashForms.html", context)
 
 def profileHomeView(request):
@@ -153,10 +153,14 @@ def AdminDashView(request):
             return redirect(next)
     return render(request, 'adminDashboardHome.html', context)
 
-#def OneJobView(request):
-#	user = request.user
-#	next = request.GET.get('next')
-#	return redirect('/job_ex.html')
+def OneJobView(request):
+	return render(request, 'job_ex.html')
+
+def TaskSampleView(request):
+    return render(request, 'adminDashboardTasks.html')
+
+def ProgressDemo(request):
+    return render(request, 'profileProgress.html')
    
 def myKey(e):
     return e.date
